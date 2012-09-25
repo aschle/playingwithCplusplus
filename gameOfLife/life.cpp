@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <string.h>
 
 using std::string;
 using std::cout;
@@ -12,7 +13,7 @@ using std::getline;
 		(i|j) ...is the position of the current cell, within the world
   	world ...that's the world we are living in
   	size  ...the dimention of the world */
-int countNeighbours (int i, int j, int world[3][3], int size){
+int countNeighbours (int i, int j, int world[4][4], int size){
 
 	return 	world[(i-1+size)%size][(j-1+size)%size] +
 					world[(i-1+size)%size][j] +
@@ -25,10 +26,7 @@ int countNeighbours (int i, int j, int world[3][3], int size){
 }
 
 /* Apply the game of life rules to every single cell in the world. And return the new future world. */
-int * livingORdying (int world[3][3], int size){
-
-	int *newWorld = 0;
-	newWorld = new int[size][size];
+void livingORdying (int world[4][4], int newWorld[4][4], int size){
 	
 	// iterating over the world line by line
 	for (int i = 0; i < size; i++){
@@ -73,11 +71,20 @@ int * livingORdying (int world[3][3], int size){
 			}
 		}
 	}
-	return newWorld;
+}
+
+void printWorld(int world[4][4], int size){
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < size; j++){
+			cout << world[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
 }
 
 /* Return true if the is some life left on the world. One cell needs to hold a 0, that's it. */
-bool worldIsStillAlive(int world[3][3], int size){
+bool worldIsStillAlive(int world[4][4], int size){
 	for (int i = 0; i < size; i++){
 		for (int j = 0; j < size; j++){
 			if (world[i][j] == 1)
@@ -90,21 +97,27 @@ bool worldIsStillAlive(int world[3][3], int size){
 int main (int argc, char **argv){
 
 	// a constant variable
-	int dim = 4;
+	int const dim = 4;
 
 	// the array at time N representing the world
 	int nArray[dim][dim];
 
+	// tha array representing the future wold N+1
+	int n1Array[dim][dim];
+
 	// fill the array randomly
 	for (int i = 0; i < dim; i++){
 		for (int j = 0; j < dim; j++){
-			nArray[i][j] = rand()%2;
+			nArray[i][j] 	= rand()%2;
+			n1Array[i][j]	= 0;
 		}
 	}
 
-	while (worldIsStillAlive){
-		nArray = livingORdying(nArray, dim);
-	}
+	 while (worldIsStillAlive(nArray, dim)){
+	 	printWorld(nArray, dim);
+	 	livingORdying(nArray, n1Array, dim);
+	 	memcpy(nArray, n1Array, sizeof(nArray));
+	 }
 
 	return 0;
 }
