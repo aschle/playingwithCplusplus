@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <string.h>
+#include <time.h>
 
 using std::string;
 using std::cout;
@@ -96,6 +97,8 @@ bool worldIsStillAlive(int world[4][4], int size){
 
 int main (int argc, char **argv){
 
+	srand ( time(NULL) );
+
 	// a constant variable
 	int const dim = 4;
 
@@ -108,6 +111,7 @@ int main (int argc, char **argv){
 	// fill the array randomly
 	for (int i = 0; i < dim; i++){
 		for (int j = 0; j < dim; j++){
+
 			nArray[i][j] 	= rand()%2;
 			n1Array[i][j]	= 0;
 		}
