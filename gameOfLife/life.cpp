@@ -27,7 +27,8 @@ int countNeighbours (int i, int j, int world[3][3], int size){
 /* Apply the game of life rules to every single cell in the world. And return the new future world. */
 int * livingORdying (int world[3][3], int size){
 
-	int newWorld[size][size];
+	int *newWorld = 0;
+	newWorld = new int[size][size];
 	
 	// iterating over the world line by line
 	for (int i = 0; i < size; i++){
@@ -39,9 +40,9 @@ int * livingORdying (int world[3][3], int size){
 			// is the spot alive?
 			if(spot == 1){
 				 // ALIVE:
-				 // * 		 I:	2v3 neighbours	-> survive
-				 // *    II:	0v1 neighbours	-> die (loneliness)
-				 // *			  4v5v6v7v8				-> die (overpopulation)
+				 // *	 I:	2v3 neighbours	-> survive
+				 // *	II:	0v1 neighbours	-> die (loneliness)
+				 // *			4v5v6v7v8				-> die (overpopulation)
 				 
 				 if (neighbours == 0 || neighbours == 1){
 				 	// loneliness
