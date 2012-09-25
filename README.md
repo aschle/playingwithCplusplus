@@ -11,17 +11,17 @@ Starting with game of life, as a simple game. Its a simple implementation, havin
 
 Example:
 
-		0 1 1 1 
-		0 1 1 0 
-		1 1 0 0 
-		0 1 1 0 
+	0 1 1 1 
+	0 1 1 0 
+	1 1 0 0 
+	0 1 1 0 
 
-		0 0 0 1 
-		0 0 0 0 
-		1 0 0 1 
-		0 0 0 0 
+	0 0 0 1 
+	0 0 0 0 
+	1 0 0 1 
+	0 0 0 0 
 
-		0 0 0 0 
-		1 0 0 1 
-		0 0 0 0 
-		1 0 0 1
+	0 0 0 0 
+	1 0 0 1 
+	0 0 0 0 
+	1 0 0 1
