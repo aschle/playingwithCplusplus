@@ -25,3 +25,21 @@ Example:
 	1 0 0 1 
 	0 0 0 0 
 	1 0 0 1
+
+
+## 01_basics
+
+Also introducing some basics, like datatypes, variables and constants.
+
+* bool
+* char
+* short/int/long
+* float/double/long double
+* const
+
+## 02_inOutput
+
+Having a go with `cin` and `cout` (`iostream`).
+
+* numberGame: Guessing a number the computer is thinking of.
+* eliza: Talking to the computer.
