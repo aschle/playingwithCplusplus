@@ -1,36 +1,28 @@
-#include <iostream>		// cin cout
-
-using std::cout;
-using std::cin;
-using std::endl;
+#include <cstdio>
 
 int main (int argc, char **argv){
 
 	int auswahl;
 
-	cout << "Getränkeautomat:\n"
-					" 1 - Cola\n"
-					" 2 - Mate\n"
-					" 3 - Bier\n"
-					" 4 - Wasser\n";
+	printf("Getränkeautomat:\n 1 - Cola\n 2 - Mate\n 3 - Bier\n 4 - Wasser\n");
 
-	cin >> auswahl;
+	scanf("%d", &auswahl);
 
 	switch(auswahl){
 		case 1:
-			cout << "Iiiihhh." << endl;
+			printf("Iiiihhh.\n");
 		break;
 		case 2:
-			cout << "Das hätte ich auch  genommen!" << endl;
+			printf("Das hätte ich auch  genommen!\n");
 		break;
 		case 3:
-			cout << "Wie alt bist du?" << endl;
+			printf("Wie alt bist du?\n");
 		break;
 		case 4:
-			cout << "Wasser, wie langweilig!" << endl;
+			printf("Wasser, wie langweilig!\n");
 		break;
 		default:
-			cout << "Oh man. Was soll das denn?" << endl;
+			printf("Oh man. Was soll das denn?\n");
 	}
 	return 0;
 }

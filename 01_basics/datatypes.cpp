@@ -16,23 +16,23 @@ int main(char argc, char **argv){
 	char = 66: // B
 
 	// Ganzzahlen
-	short anzahl 		= 50;
+	short anzahl	= 50;
 	int wochentage 	= 7;
-	long geld	 			= 12345;
+	long geld	= 12345;
 
 	// Gleitkommazahlen
-	float gehalt 		= 660.89;
+	float gehalt	= 660.89;
 	double prozente = 16.9; 
-	long double 		= 12345678.789;
+	long double 	= 12345678.789;
 
-// Variablen und Initialisierung
-// immer initialisieren sonst stehen komische Dinge drin
+	// Variablen und Initialisierung
+	// immer initialisieren sonst stehen komische Dinge drin
 	int Zahl1 = 100;
 	int Zahl2(100);
 	int Zahl3(3), Zahl4(4);
 
 	// Konstanten
-	const double pi 			= 3.1415;
+	const double pi		= 3.1415;
 	int const myPrimzahl	= 13;
 
 }

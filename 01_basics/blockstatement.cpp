@@ -10,6 +10,7 @@ int main (int argc, char **argv){
 	{
 		int mynumber = 10;
 	}
-
+	
+	// Was wird ausgegeben?
 	printf("My Number: %d\n", mynumber);
 }
