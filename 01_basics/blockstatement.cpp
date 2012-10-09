@@ -1,18 +1,15 @@
-#include <iostream>		// cin cout
+#include <cstdio>
 
-using std::cout;
-using std::cin;
-using std::endl;
-
+// Was ist ein Block Statement?
 int main (int argc, char **argv){
-
-	// block statement { }
-
+	
+	// Diese Variable "mynumber" wurder außerhalb des Blocks deklariert {}.
 	int mynumber = 1000;
 
+	// Hier kommt ein Block.
 	{
 		int mynumber = 10;
 	}
 
-	cout << "My Number: " << mynumber << endl;
+	printf("My Number: %d\n", mynumber);
 }
