@@ -1,0 +1,188 @@
+-----------------------------
+Die Zahlensysthemen und Basis
+-----------------------------
+
+BIN - Basis  2 - binär				{0,1}
+DEZ - Basis 10 - dezimal			{0,1,2,3,4,5,6,7,8,9}
+OKT - Basis  8 - oktal				{0,1,2,3,4,5,6,7}
+HEX - Basis 16 - hedadezimal {0,1,2,3,4,5,6,7,8,9,A(10),B(11),C(12),D(13),E(14),F(15)}
+
+
+-------------------------------------
+Welche Umrechenmöglichkeiten gibt es?
+-------------------------------------
+
+BIN -> DEZ (1)
+BIN -> OKT (2)
+BIN -> HEX (2)
+
+DEZ -> BIN (3)
+DEZ -> OKT (3)
+DEZ -> HEX (3)
+
+OKT -> BIN (4)
+OKT -> DEZ (1) 
+OKT -> HEX (5)
+
+HEX -> BIN (4)
+HEX -> DEZ (1)
+HEX -> OKT (5)
+
+
+-------------------------------------
+(1) Umrechnung von BIN/OKT/HEX -> DEZ
+-------------------------------------
+
+BIN->DEZ
+--------
+
+1      0      1      0      0 (BIN)
+1*2⁴ + 0*2³ + 1*2² + 0*2¹ + 0*2⁰
+16   + 0    + 4    + 0    + 0    = 20(DEZ)
+
+
+OKT->DEZ
+--------
+
+3      4      7 (OKT)
+3*8² + 4*8¹ + 7*8⁰
+3*64 + 4*8  + 7
+192  + 32   + 7			= 231(DEZ)
+
+
+HEX->DEZ
+--------
+
+A        3       F (HEX)
+A*16²  + 3*16¹ + F*16⁰
+10*16² + 3*16¹ + 15*16⁰
+2560   + 48    + 15			= 2623(DEZ)
+
+
+-----------------------------------
+(2) Umrechnung von BIN nach OKT/HEX
+-----------------------------------
+
+BIN -> OKT
+----------
+
+* 3er Gruppen bilden
+* wenn die Länge der Binärzahl nicht durch 3 teilbar ist müssen links Nullen aufgefüllt werden
+* pro Gruppe wie bei (1) rechnen
+
+0      0      1    | 0      1      0    | 1      0      0(BIN)
+0*2² + 0*2¹ + 1*2⁰ | 0*2² + 1*2¹ + 0*2⁰ | 1*2² + 0*2¹ + 0*2⁰
+0    + 0    + 1    | 0    + 2    + 0    | 4    + 0    + 0				= 124(OKT)
+
+
+BIN -> HEX
+----------
+
+* 4er Gruppen bilden
+* wenn die Länge der Binärzahl nicht durch 4 teilbar ist müssen links Nullen aufgefüllt werden
+* pro Gruppe wie bei (1) rechnen
+
+0      0      1      0    | 1      0      1      0(BIN)
+0*2³ + 0*2² + 1*2¹ + 0*2⁰ | 1*2³ + 0*2² + 1*2¹ + 0*2⁰
+0    + 0    + 2    + 0    | 8    + 0    + 2    + 0			= 2A(HEX)
+
+
+---------------------------------------
+(3) Umrechnung von DEZ nach BIN/OKT/HEX
+---------------------------------------
+
+* die Dezimalzahl wird solange durch die Basis (2,8 oder 16) geteilt bis es nicht mehr geht (also bis das Ergebnis der Division Null ist)
+* die Reste ergeben die Zahl in BIN/OKT/HEX (um 90 Grad nach rechts drehen)
+
+Beispiel: 125(DEZ)
+
+
+DEZ -> BIN
+----------
+
+125 : 2 = 62; R = 1
+ 62 : 2 = 31; R = 0
+ 31 : 2 = 15; R = 1
+ 15 : 2 =  7; R = 1
+  7 : 2 =  3; R = 1
+  3 : 2 =  1; R = 1
+  1 : 2 =  0; R = 1
+
+  1111101(BIN)
+
+
+DEZ -> OKT
+----------
+
+125 : 8 = 15; R = 5
+ 15 : 8 =  1; R = 7
+ 	1 : 8 =  0; R = 1
+
+175(OKT)
+
+
+DEZ -> HEX
+----------
+
+125 : 16 = 7; R = 13
+  7 : 16 = 0; R =  7
+
+  7D(HEX)
+
+
+-----------------------------------
+(4) Umrechnung von OKT/HEX nach BIN
+-----------------------------------
+
+OKT -> BIN
+----------
+
+* eine Stelle der Oktalzahl entspricht einer dreistelligen Binärzahl
+* also rechnet man es für jede Stelle der oktalzahl einzeln um
+* das umrechnen kann man im Kopf machen oder mit (3) DEZ->BIN
+* einzelnen Ergebnisse aneinanderfügen
+
+Beispiel: 75(OKT)
+
+5 in binär -> 101 (= 1*2² + 0*2¹ + 1*2⁰)
+7 in binär -> 111 (= 1*2² + 1*2¹ + 1*2⁰)
+
+111101(BIN)
+
+
+HEX -> BIN
+----------
+
+* eine Stelle der Hexzahl entspricht einer 4stelligen Binärzahö
+* für jede Stelle extra rechnen im Kopf oder mit (3) DEZ->BIN
+
+Beispiel: E7A1(HEX)
+
+1 in binär -> 0001 (= 0*2³ + 0*2² + 0*2¹ + 1*2⁰)
+A in binär -> 1010 (= 1*2³ + 0*2² + 1*2¹ + 0*2⁰)
+7 in binär -> 0111 (= 0*2³ + 1*2² + 1*2¹ + 1*2⁰)
+E in binär -> 1110 (= 1*2³ + 1*2² + 1*2¹ + 0*2⁰)
+
+1110011110100001(BIN)
+
+
+---------------------------------
+(5) OKT nach HEX und HEX nach OKT
+---------------------------------
+
+* das geht nicht so einfach
+* man braucht Zwischenschritte:
+
+
+OKT->HEX
+--------
+
+* man rechnet erst von OKT nach DEZ mit (1)
+* dann von DEZ nach HEX mit (3)
+
+
+HEX-> OKT
+---------
+
+* man rechnet erst von HEX nach DEZ mit (1)
+* und dann von DEZ nach OKT mit (3)
